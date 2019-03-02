@@ -10,10 +10,12 @@ public class CashRegisterNoStrategyPattern {
     }
 
     public void recordPurchase(double amount) {
+
         purchase += amount;
     }
 
     public void calculateTaxThailand() {
+
         purchase = purchase + (purchase*0.07);
     }
 
@@ -23,10 +25,12 @@ public class CashRegisterNoStrategyPattern {
     }
 
     public void calculateTaxCA() {
+
         purchase = purchase + (purchase*0.075);
     }
 
     public void enterPayment(double amount) {
+
         payment += amount;
     }
 

@@ -14,14 +14,14 @@ public class SortWithStrategyPattern {
     }
 
     public static void sort(Object[] a, Comparator cmp) {
-        for (int i = 0; i < a.length - 1; i++) {// i แบ่งส่วนเรียงแล้วกับยังไม่เรียง
+        for (int i = 0; i < a.length - 1; i++) {// i divides array into two parts: already-sorted, not sorted
             int minPos = i;
-            for (int j = i + 1; j < a.length; j++) {  // วนลูปหาค่าน้อยสุด
+            for (int j = i + 1; j < a.length; j++) {  // loop to find index containing a minimum value
                 if (cmp.compare(a[j], a[minPos]) < 0) {
                     minPos = j;
                 }
             }
-            // สลับข้อมูลใน minPos และ i ทำให้ข้อมูลใน minPos ไปอยู่ส่วนที่เรียงแล้ว
+            // swap minPos and i so that data in minPos index will be the already-sorted part
             Object temp = a[minPos];
             a[minPos] = a[i];
             a[i] = temp;
